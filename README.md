@@ -1,2 +1,2 @@
 # Winshop Website
-A created by request from Winshop, a local custom apparel startup.
+A website created by request from Winshop, a local custom apparel startup.
