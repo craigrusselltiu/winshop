@@ -1,5 +1,6 @@
 import useDocumentTitle from '../hooks/useDocumentTitle'
 import Container from '../components/ui/Container'
+import FeaturedProducts from '../components/home/FeaturedProducts'
 
 export default function HomePage() {
   useDocumentTitle(null)
@@ -18,6 +19,8 @@ export default function HomePage() {
           </div>
         </Container>
       </section>
+
+      <FeaturedProducts />
     </div>
   )
 }
