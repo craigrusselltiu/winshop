@@ -1,5 +1,7 @@
 import useDocumentTitle from '../hooks/useDocumentTitle'
 import Container from '../components/ui/Container'
+import CategoryShowcase from '../components/home/CategoryShowcase'
+import ValuePropositions from '../components/home/ValuePropositions'
 
 export default function HomePage() {
   useDocumentTitle(null)
@@ -18,6 +20,9 @@ export default function HomePage() {
           </div>
         </Container>
       </section>
+
+      <CategoryShowcase />
+      <ValuePropositions />
     </div>
   )
 }
