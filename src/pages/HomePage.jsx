@@ -1,5 +1,7 @@
 import useDocumentTitle from '../hooks/useDocumentTitle'
 import Container from '../components/ui/Container'
+import CategoryShowcase from '../components/home/CategoryShowcase'
+import ValuePropositions from '../components/home/ValuePropositions'
 import FeaturedProducts from '../components/home/FeaturedProducts'
 
 export default function HomePage() {
@@ -20,6 +22,8 @@ export default function HomePage() {
         </Container>
       </section>
 
+      <CategoryShowcase />
+      <ValuePropositions />
       <FeaturedProducts />
     </div>
   )
