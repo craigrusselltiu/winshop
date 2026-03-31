@@ -134,6 +134,36 @@
   .divider {
     @apply border-t border-sand;
   }
+
+  /* Desktop nav link with animated underline */
+  .nav-link {
+    @apply relative px-3 py-2
+      font-sans text-body-sm font-medium uppercase tracking-[0.08em]
+      text-warm-gray no-underline
+      transition-colors duration-300
+      hover:text-charcoal;
+  }
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-0.5 left-3 right-3 h-[1.5px] bg-terracotta
+      origin-left scale-x-0 transition-transform duration-300 ease-out;
+  }
+  .nav-link:hover::after {
+    @apply scale-x-100;
+  }
+  .nav-link--active {
+    @apply text-charcoal;
+  }
+  .nav-link--active::after {
+    @apply scale-x-100;
+  }
+
+  /* Mobile nav link */
+  .mobile-nav-link {
+    @apply block py-2 font-sans text-[1.05rem] text-charcoal/80 no-underline
+      transition-colors duration-200
+      hover:text-terracotta;
+  }
 }
 
 /* ---- Utility layer: one-off helpers ---- */
