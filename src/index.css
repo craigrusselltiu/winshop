@@ -2,11 +2,150 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  @apply bg-cream text-charcoal font-sans antialiased;
-  margin: 0;
+/* ---- Base layer: element defaults ---- */
+@layer base {
+  body {
+    @apply bg-cream text-charcoal font-sans antialiased;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif text-charcoal;
+  }
+
+  h1 { @apply text-heading-1; }
+  h2 { @apply text-heading-2; }
+  h3 { @apply text-heading-3; }
+
+  a {
+    @apply text-terracotta transition-colors duration-200;
+  }
+  a:hover {
+    @apply text-terracotta-dark;
+  }
+
+  img {
+    @apply max-w-full h-auto block;
+  }
+
+  ::selection {
+    @apply bg-terracotta/20 text-charcoal;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Focus ring for accessibility */
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-terracotta;
+  }
 }
 
-h1, h2, h3, h4, h5, h6 {
-  @apply font-serif;
+/* ---- Component layer: reusable patterns ---- */
+@layer components {
+  /* Overline label used above headings */
+  .overline {
+    @apply text-overline font-sans font-semibold uppercase tracking-[0.15em] text-warm-gray;
+  }
+
+  /* Primary call-to-action button */
+  .btn-primary {
+    @apply inline-flex items-center justify-center
+      bg-terracotta text-cream font-sans font-medium
+      px-8 py-3 text-body-sm uppercase tracking-[0.1em]
+      transition-colors duration-200
+      hover:bg-terracotta-dark
+      focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta;
+  }
+
+  /* Secondary / outline button */
+  .btn-secondary {
+    @apply inline-flex items-center justify-center
+      border border-charcoal text-charcoal font-sans font-medium
+      px-8 py-3 text-body-sm uppercase tracking-[0.1em]
+      transition-colors duration-200
+      hover:bg-charcoal hover:text-cream
+      focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-charcoal;
+  }
+
+  /* Ghost / text-only button */
+  .btn-ghost {
+    @apply inline-flex items-center justify-center
+      text-charcoal font-sans font-medium
+      px-4 py-2 text-body-sm uppercase tracking-[0.1em]
+      transition-colors duration-200
+      hover:text-terracotta
+      focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta;
+  }
+
+  /* Page section spacing */
+  .section {
+    @apply py-16 md:py-22 lg:py-30;
+  }
+
+  /* Content container */
+  .container-content {
+    @apply mx-auto max-w-content px-5 sm:px-8;
+  }
+
+  /* Product card image wrapper */
+  .product-image {
+    @apply aspect-product overflow-hidden bg-beige;
+  }
+  .product-image img {
+    @apply w-full h-full object-cover transition-transform duration-500;
+  }
+
+  /* Card hover effect */
+  .card-hover {
+    @apply transition-shadow duration-300 hover:shadow-card;
+  }
+
+  /* Badge styles */
+  .badge {
+    @apply inline-block px-2.5 py-1 text-caption font-sans font-semibold uppercase;
+  }
+  .badge-sale {
+    @apply badge bg-sage text-cream;
+  }
+  .badge-new {
+    @apply badge bg-gold text-cream;
+  }
+  .badge-sold-out {
+    @apply badge bg-warm-gray text-cream;
+  }
+  .badge-preorder {
+    @apply badge bg-terracotta text-cream;
+  }
+
+  /* Form input styles */
+  .input {
+    @apply w-full border border-sand bg-cream px-4 py-3
+      text-body font-sans text-charcoal placeholder:text-warm-gray/60
+      transition-colors duration-200
+      focus:border-terracotta focus:outline-none;
+  }
+
+  /* Divider line */
+  .divider {
+    @apply border-t border-sand;
+  }
+}
+
+/* ---- Utility layer: one-off helpers ---- */
+@layer utilities {
+  /* Full-bleed section (breaks out of container) */
+  .full-bleed {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+  }
+
+  /* Text balance for headings */
+  .text-balance {
+    text-wrap: balance;
+  }
 }
