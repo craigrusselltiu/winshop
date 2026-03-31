@@ -3,13 +3,7 @@ import { motion } from 'framer-motion'
 import { cn } from '../../utils/cn'
 import { getDisplayPrice } from '../../utils/formatPrice'
 import { getProductBadge } from '../../utils/productHelpers'
-
-const badgeStyles = {
-  sale: 'badge-sale',
-  new: 'badge-new',
-  soldout: 'badge-sold-out',
-  preorder: 'badge-preorder',
-}
+import ProductBadge from './ProductBadge'
 
 export default function ProductCard({ product, index = 0, featured = false }) {
   const badge = getProductBadge(product)
@@ -42,12 +36,9 @@ export default function ProductCard({ product, index = 0, featured = false }) {
             className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
           />
           {badge && (
-            <span className={cn(
-              'absolute top-3 left-3 z-10',
-              badgeStyles[badge.type],
-            )}>
-              {badge.label}
-            </span>
+            <div className="absolute top-3 left-3 z-10">
+              <ProductBadge label={badge.label} type={badge.type} />
+            </div>
           )}
         </div>
 

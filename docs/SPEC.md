@@ -2,7 +2,7 @@
 
 ## Implementation Note
 
-Use the `/frontend-design` skill when building pages and components to ensure distinctive, production-grade UI with high design quality.
+Use the `/frontend-design` skill when building pages and components to ensure distinctive, production-grade UI with high design quality. Reference `docs/reference.png` for the target aesthetic: editorial fashion layout with bold oversized typography, asymmetric grid compositions, warm neutral palette (cream, beige, charcoal), and a mix of full-bleed imagery with structured content blocks.
 
 ## Overview
 

@@ -3,6 +3,8 @@ import HeroSection from '../components/home/HeroSection'
 import CategoryShowcase from '../components/home/CategoryShowcase'
 import ValuePropositions from '../components/home/ValuePropositions'
 import FeaturedProducts from '../components/home/FeaturedProducts'
+import AboutSnippet from '../components/home/AboutSnippet'
+import NewsletterSignup from '../components/home/NewsletterSignup'
 
 export default function HomePage() {
   useDocumentTitle(null)
@@ -13,6 +15,8 @@ export default function HomePage() {
       <CategoryShowcase />
       <ValuePropositions />
       <FeaturedProducts />
+      <AboutSnippet />
+      <NewsletterSignup />
     </div>
   )
 }

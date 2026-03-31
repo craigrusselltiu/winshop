@@ -4,6 +4,7 @@ import useDocumentTitle from '../hooks/useDocumentTitle'
 import Container from '../components/ui/Container'
 import CategoryFilter from '../components/shop/CategoryFilter'
 import SortDropdown from '../components/shop/SortDropdown'
+import ProductGrid from '../components/shop/ProductGrid'
 import { getProductsByCategory, sortProducts } from '../data/products'
 import { getCategoryBySlug } from '../data/categories'
 
@@ -32,14 +33,16 @@ export default function ShopPage() {
           {pageTitle}
         </h1>
 
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between mb-8">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between mb-6">
           <CategoryFilter active={category || null} />
           <SortDropdown value={sortBy} onChange={setSortBy} />
         </div>
 
-        <p className="text-body-sm text-warm-gray">
+        <p className="mb-8 text-body-sm text-warm-gray">
           {sorted.length} {sorted.length === 1 ? 'product' : 'products'}
         </p>
+
+        <ProductGrid products={sorted} />
       </Container>
     </section>
   )
