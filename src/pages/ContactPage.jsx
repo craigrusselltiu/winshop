@@ -6,6 +6,7 @@ import Container from '../components/ui/Container'
 
 const subjects = [
   'General Inquiry',
+  'Custom Order',
   'Order Help',
   'Wholesale',
   'Feedback',
@@ -95,6 +96,31 @@ export default function ContactPage() {
               transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
               className="space-y-8"
             >
+              <p className="text-body text-warm-gray leading-relaxed">
+                For custom orders and enquiries, the quickest way to reach us is by email
+                at{' '}
+                <a
+                  href="mailto:enquiries@winshopaustralia.com.au"
+                  className="font-medium text-charcoal hover:text-terracotta"
+                >
+                  enquiries@winshopaustralia.com.au
+                </a>{' '}
+                or by filling in the form below. This helps us process every
+                request — including yours — as efficiently as possible. We aim to
+                respond to all enquiries within 3 working days. If email isn&rsquo;t an
+                option, you&rsquo;re welcome to reach out via
+                our{' '}
+                <a
+                  href="https://facebook.com/winshopaustralia"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-medium text-charcoal hover:text-terracotta"
+                >
+                  Facebook page
+                </a>
+                .
+              </p>
+
               {infoItems.map((item) => {
                 const Icon = item.icon
                 return (
@@ -160,7 +186,7 @@ export default function ContactPage() {
                     Message Sent
                   </h2>
                   <p className="text-body text-warm-gray">
-                    Thanks for reaching out — we&rsquo;ll get back to you within 1 business day.
+                    Thanks for reaching out — we&rsquo;ll get back to you within 3 working days.
                   </p>
                 </div>
               ) : (

@@ -5,6 +5,7 @@ import { getFeaturedCategories } from '../../data/categories'
 import Container from '../ui/Container'
 import SectionHeading from '../ui/SectionHeading'
 import { cn } from '../../utils/cn'
+import { assetUrl } from '../../utils/assetUrl'
 
 const tileVariants = {
   hidden: { opacity: 0, y: 30 },
@@ -32,7 +33,7 @@ function CategoryTile({ category, index, className }) {
         {/* Image with zoom on hover */}
         <div className="absolute inset-0">
           <img
-            src={category.image}
+            src={assetUrl(category.image)}
             alt={category.name}
             className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
           />

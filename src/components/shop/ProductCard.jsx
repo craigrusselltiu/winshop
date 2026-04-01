@@ -4,6 +4,7 @@ import { cn } from '../../utils/cn'
 import { getDisplayPrice } from '../../utils/formatPrice'
 import { getProductBadge } from '../../utils/productHelpers'
 import ProductBadge from './ProductBadge'
+import { assetUrl } from '../../utils/assetUrl'
 
 export default function ProductCard({ product, index = 0, featured = false }) {
   const badge = getProductBadge(product)
@@ -30,7 +31,7 @@ export default function ProductCard({ product, index = 0, featured = false }) {
           product.soldOut && 'after:absolute after:inset-0 after:bg-cream/40',
         )}>
           <img
-            src={product.defaultImage}
+            src={assetUrl(product.defaultImage)}
             alt={product.name}
             loading="lazy"
             className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"

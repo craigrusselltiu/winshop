@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import Container from '../ui/Container'
 import Button from '../ui/Button'
+import { assetUrl } from '../../utils/assetUrl'
 
 export default function AboutSnippet() {
   return (
@@ -17,7 +18,7 @@ export default function AboutSnippet() {
             className="aspect-[4/3] overflow-hidden bg-sand"
           >
             <img
-              src="/images/about.jpg"
+              src={assetUrl('/images/about.jpg')}
               alt="Winshop workshop"
               className="h-full w-full object-cover"
               onError={(e) => { e.target.style.display = 'none' }}

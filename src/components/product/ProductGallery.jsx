@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { cn } from '../../utils/cn'
+import { assetUrl } from '../../utils/assetUrl'
 
 export default function ProductGallery({ product, selectedColor }) {
   const getImages = (color) => {
@@ -27,7 +28,7 @@ export default function ProductGallery({ product, selectedColor }) {
         {mainSrc ? (
           <img
             key={mainSrc}
-            src={mainSrc}
+            src={assetUrl(mainSrc)}
             alt={`${product.name}${selectedColor ? ` in ${selectedColor}` : ''}`}
             className="h-full w-full object-cover"
             onError={(e) => { e.target.style.display = 'none' }}
@@ -51,7 +52,7 @@ export default function ProductGallery({ product, selectedColor }) {
               aria-label={`View image ${i + 1}`}
             >
               <img
-                src={src}
+                src={assetUrl(src)}
                 alt=""
                 className="h-full w-full object-cover"
                 onError={(e) => { e.target.style.display = 'none' }}

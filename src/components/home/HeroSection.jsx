@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import Button from '../ui/Button'
+import { assetUrl } from '../../utils/assetUrl'
 
 const stagger = {
   visible: { transition: { staggerChildren: 0.13 } },
@@ -21,7 +22,7 @@ export default function HeroSection() {
       {/* Hero image — fullbleed on mobile with overlay, right column on desktop */}
       <div className="absolute inset-0 lg:left-[52%]">
         <img
-          src="/images/hero.jpg"
+          src={assetUrl('/images/hero.jpg')}
           alt=""
           className="h-full w-full object-cover"
           loading="eager"
